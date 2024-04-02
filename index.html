@@ -40,22 +40,23 @@
 <!-- contact -->
 <div class="contact-section" id="contact">
     <div class="contact-form">
-        <form id="example-form" name="contact-form" accept-charset="utf-8" action="https://formspree.io/example" method="post">
+        <form id="agent-form" name="contact-form" accept-charset="utf-8" action="https://formspree.io/example" method="post">
             <fieldset id="form-inputs">
-              <label for="client-name">Full Name</label>
-              <input type="text" name="name" id="full-name" placeholder="first and last name" required="">
+              <label for="client-firstname">First Name:</label>
+              <input type="text" name="name" id="first-name" placeholder="first name" required="">
+              <br>
+              <label for="client-lastname">Last Name:</label>
+              <input type="text" name="name" id="Last-name" placeholder="Last name" required="">
               <br>
               <label for="email-address">Email Address</label>
               <input type="email" name="_replyto" id="email-address" placeholder="email@test.com" required="">
               <br>
-              <label for="telephone">Telephone Number (Optional)</label>
+              <label for="telephone">Phone Number (Optional)</label>
               <input type="telephone" name="telephone" id="telephone" placeholder="(555) 555-5555">
               <br>
-              <label for="user-request">How can we help?</label>
-              <textarea rows="6" name="request" id="request" placeholder="I need a website." required=""></textarea>
-              <input type="hidden" name="_subject" id="email-subject" value="new-lead">
             </fieldset>
-            <input id="submit-button"type="submit" value="Submit">
+
+            <div class="submit-form-button"><input id="submit-button"type="submit" value="Submit">
           </form>     
     </div>
 </div>
