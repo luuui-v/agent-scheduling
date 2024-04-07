@@ -92,7 +92,7 @@ body{
     .submit-form-button {
         display: flex;
         justify-content: center;
-    }
+    }v
 
     #submit-button {
         margin-top: 2em;
@@ -120,6 +120,25 @@ body{
         flex-direction: column;
         align-items: center;
     }
+
+    .contact-email-phone {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .privacy-link a{
+        text-decoration: none;
+        color: #000000;
+        
+    }
+
+    .privacy-link {
+        display: flex;
+        justify-content: center;
+    }
+
+
 
   
 
