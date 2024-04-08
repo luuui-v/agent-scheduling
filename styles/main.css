@@ -55,6 +55,12 @@ body{
         justify-content: center;
     }
 
+    .icons {
+        display: flex;
+        justify-content: center;
+        gap: 2em;
+    }
+
     #hero{
         display: flex;
         justify-content: center;
