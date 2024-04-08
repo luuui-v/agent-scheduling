@@ -75,6 +75,10 @@ body{
     
     }
 
+    .schedule {
+        overflow: hidden;
+    }
+    
     .calendly-inline-widget {
         overflow: hidden;
     }
