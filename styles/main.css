@@ -81,6 +81,11 @@ body{
     
     }
 
+    .contact-today {
+        display: flex;
+        justify-content: center;
+    }
+
     .schedule {
         display: flex;
         justify-content: center;
