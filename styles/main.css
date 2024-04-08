@@ -66,7 +66,7 @@ body{
     }
 
     #contact {
-        margin-top: 5em;
+        margin-top: 1em;
         margin-bottom: 1em;
         display: flex;
         justify-content: center;
@@ -76,11 +76,16 @@ body{
     }
 
     .schedule {
-        overflow: hidden;
+        display: flex;
+        justify-content: center;
     }
 
     .calendly-inline-widget {
+        overflow-x: hidden;
         overflow: hidden;
+        width: 30em;
+        height: 60em;
+       
     }
     
 
@@ -165,6 +170,17 @@ body{
         background-color: var(--primary-color);
     }
 
+    .schedule {
+        display: flex;
+    }
+
+    .calendly-inline-widget {
+        overflow-x: hidden;
+        overflow: hidden;
+        width: 55em;
+
+       
+    }
 
 
     
