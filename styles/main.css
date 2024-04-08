@@ -71,7 +71,7 @@ body{
         display: flex;
         justify-content: center;
         font-size: 20px;
-        background-color: #000000;
+        background-color: #ffffff;
     
     }
 
@@ -87,18 +87,21 @@ body{
 
     #form-inputs {
         border: none;
+        color: black;
     }
 
     .submit-form-button {
         display: flex;
         justify-content: center;
-    }v
+    }
 
     #submit-button {
         margin-top: 2em;
         border: none;
         border-radius: 10px;
         padding: 10px;
+        background-color: #000000;
+        color: white;
     }
 
     label, input {
@@ -158,13 +161,7 @@ body{
         background-color: var(--primary-color);
     }
 
-    #agent-form {
-        background-color: #000000;
-        width: 600px;
-        border-radius: 10px;
 
-        
-    }
 
     
    
