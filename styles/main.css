@@ -108,7 +108,7 @@ body{
     }
 
     #landing {
-        width: 100%;
+        width: 30em;
     }
 
     #contact {
@@ -160,7 +160,7 @@ body{
         padding: 20px;
         padding-top: 2em;
         padding-bottom: 2em;
-        width: 70vw;
+        width: 60vw;
     }
 
     #agent-form {
@@ -237,7 +237,7 @@ body{
 @media only screen and (min-width: 48em) {
 
     #landing {
-        width: 500px;
+        width: 30em;
     }
 
     #contact{
@@ -251,10 +251,12 @@ body{
     .calendly-inline-widget {
         overflow-x: hidden;
         overflow: hidden;
-        width: 55em;
+        width: 30em;
 
        
     }
+
+  
 
 
     
