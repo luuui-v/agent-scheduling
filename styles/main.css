@@ -10,27 +10,23 @@
 
 /* First Font Family */
 @font-face {
-    font-family: bold-italic;
-    src: url(/assets/fonts/PlayfairDisplay-BoldItalic.ttf);
+    font-family: bold-black;
+    src: url(/assets/fonts/PlayfairDisplay-Black.ttf);
 }
 
 /* Second Font Family */
 @font-face {
-    font-family: regular;
+    font-family: medium-black;
+    src: url(/assets/fonts/PlayfairDisplay-Black.ttf);
+}
+
+/* third Font Family */
+@font-face {
+    font-family: regular-black;
     src: url(/assets/fonts/PlayfairDisplay-Regular.ttf);
 }
 
-/* Third Font Family */
-@font-face {
-    font-family: bold-1;
-    src: url(/assets/fonts/PlayfairDisplay-Bold.ttf);
-}
 
-/* Fourth Font Family */
-@font-face {
-    font-family: extra-bold;
-    src: url(/assets/fonts/PlayfairDisplay-ExtraBold.ttf);
-}
 
 
 html,body {
@@ -51,6 +47,50 @@ body{
 
 
     header{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 4rem;
+    }
+
+    #navbar {
+        background-color: #000000;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transition: top 0.5s;
+        z-index: 100;
+    }
+
+    .navigation ul{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        text-decoration: none;
+        list-style-type: none;
+        justify-content: center;
+        padding-right: 30px;
+        
+    }
+
+    .navigation a {
+        text-decoration: none;
+        color: #ffffff;
+        font-family: regular-black;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .navigation a:hover {
+        background-color: #ffffff;
+        color: #000000;
+        border-radius: 4px;
+        padding: 10px;
+        
+    }
+
+    .main-logo {
         display: flex;
         justify-content: center;
     }
@@ -98,7 +138,30 @@ body{
         height: 60em;
        
     }
-    
+
+    #profile-color {
+        display: flex;
+        justify-content: center;
+        width: 20em
+    }
+
+    .about {
+        display:flex;
+        padding: 1em;
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-me {
+        display: flex;
+        font-size: 22px;
+        color: #ffffff;
+        background-color: rgb(0, 0, 0);
+        border-radius: 10px;
+        padding: 20px;
+        padding-top: 2em;
+        padding-bottom: 2em;
+        width: 70vw;
+    }
 
     #agent-form {
         padding: 1em;
@@ -174,7 +237,7 @@ body{
 @media only screen and (min-width: 48em) {
 
     #landing {
-        width: 740px;
+        width: 500px;
     }
 
     #contact{
