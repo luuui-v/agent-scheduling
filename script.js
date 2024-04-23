@@ -13,5 +13,3 @@ document.addEventListener("DOMContentLoaded", function() {
     const calendlyDiv = document.querySelector(".calendly-inline-widget");
     observer.observe(calendlyDiv);
   });
-
-
