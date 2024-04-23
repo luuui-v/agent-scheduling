@@ -50,7 +50,8 @@ body{
         display: flex;
         justify-content: center;
         flex-direction: column;
-        margin-top: 4rem;
+        margin-top: 3rem;
+        
     }
 
     #navbar {
@@ -106,7 +107,6 @@ body{
         align-items: center;
         flex-direction: column;
         background-color: var(--secondary-color);
-        padding-bottom: 12em;
     }
 
     .hero-section {
@@ -116,6 +116,7 @@ body{
         background-color: var(--primary-color);
         padding-bottom: 1em;
         flex-direction: column;
+        height: 44em;
     }
 
     #modalBtn {
@@ -233,7 +234,7 @@ body{
 
 
     #hero-image {
-        width: 26em;
+        width: 25em;
         background-color: var(--primary-color);
 
     }
@@ -250,6 +251,15 @@ body{
 
     .hero-text {
         background-color: #000000;
+    }
+
+    .landing-text-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 34em;
+        width: 100vw;
+        margin-bottom: 5em;
     }
 
     #landing-text-1 {
@@ -270,6 +280,7 @@ body{
         padding-right: 1em;
         text-align: center;
         padding-bottom: 2em;
+        width: 14em;
     }
 
     @keyframes glowing {
@@ -294,6 +305,7 @@ body{
         align-items: center;
         font-family: bold-black;
         font-size: 20px;
+        margin-top: 6em;
     }
     
     a:link { 
@@ -474,6 +486,20 @@ body{
 @media only screen and (min-width: 48em) {
 
  
+    #hero {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .landing-text-box {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 0em;
+    }
+
+
+
 
     #contact{
         background-color: var(--primary-color);
@@ -494,6 +520,8 @@ body{
     .about-me {
         width: 26em;
     }
+
+
 
   
 
