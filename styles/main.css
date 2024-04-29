@@ -430,7 +430,8 @@ body{
         padding: 20px;
         padding-top: 2em;
         padding-bottom: 2em;
-        width: 60vw;
+        width: 80vw;
+        text-align: center;
     }
 
     #agent-form {
