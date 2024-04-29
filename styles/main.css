@@ -49,6 +49,7 @@ body{
         text-decoration: none;
         color: var(--primary-color);
         font-family: regular-black;
+        font-size: 18px;
         
     }
 
@@ -87,7 +88,7 @@ body{
     .navigation ul{
         display: flex;
         flex-direction: row;
-        gap: 1rem;
+        gap: 0rem;
         text-decoration: none;
         list-style-type: none;
         justify-content: center;
