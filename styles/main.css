@@ -45,12 +45,32 @@ body{
     /* Styles for small screens go here */
     /* header navigation */
 
+    .language-change a{
+        text-decoration: none;
+        color: var(--primary-color);
+        font-family: regular-black;
+        
+    }
+
+    .language-change a:hover {
+        color: #ffff00;
+    }
+
+    .language-change{
+        padding-top: 8px;
+        padding-bottom: 5px;
+        background: linear-gradient(45deg, rgb(17, 17, 255),rgb(255, 90, 90));
+        width: 100%;
+        text-align: center;
+    }
+
 
     header{
         display: flex;
         justify-content: center;
         flex-direction: column;
         margin-top: 3rem;
+        align-items: center;
         
     }
 

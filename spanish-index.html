@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
+
+    <meta name='title' property="og:title" content="Asegura tu futuro hoy."/>
+    <meta name='type' property="og:type" content="Pagina Web"/>
+    <meta name='image' property="og:image" content="https://www.codyoutfleet.com/assets/images/cody-outfleet-agent.webp"/>  
+    <meta name='url' property="og:url" content="www.codyoutfleet.com"/> 
+    <meta name='discription' property="og:discription" content="¿Alguna vez se ha preguntado cómo los pequeños pasos financieros pueden acercarlo a la libertad financiera? No busque más. ¡Únase a nosotros mientras allanamos el camino hacia su empoderamiento financiero!"/>       
+    <script src="/script.js"></script>
+
+    <title>Asegure su futuro hoy.</title>
+</head>
+
+
+
+<header>
+    <div class="language-change"><a href="index.html">English</a></div>
+    <nav class="navigation" id="navbar" alt="Navigation section that includes a home, about, contact and book links.">
+        <ul>
+          <li><a href="#home" alt="Boton para la seccion de INICIO" style= "transition: .5s;">INICIO</a></li>
+          <li><a href="#about" alt="Boton para la seccion de INFORMACIÓN." style= "transition: .5s;">INFORMACIÓN</a></li>
+          <li><a href="#contact" alt="Boton para la seccion de CONTACTO." style="transition: .5s;">CONTACTO</a></li>
+          <li><a href="#schedule" alt="Boton para la seccion de RESERVA." style="transition: .5s;">RESERVA</a></li>
+        </ul>
+      </nav>
+    
+</header>
+
+
+
+<!-- hero -->
+<div class="hero" id="hero">
+    <div class="hero-section">
+        <div class="main-logo" id="home">
+            <a href="https://www.codyoutfleet.com/"><img src="/assets/images/primerica-logo.webp" alt="Primerica logo made up with red, white and blue interlaced rings." width="400px"></a>
+        </div>
+            <img src="/assets/images/agent-spanish.webp" alt="La imagen de perfil es una silueta en blanco y negro de Cody. Detrás del perfil de Cody hay un fondo de cuadro rojo y azul dividido que se desvanece en el espacio en blanco del fondo del sitio web". id="hero-image">
+    
+            <div class="join-button" id="join" alt="El botón Unirse abre una ventana emergente para los usuarios que preguntan sobre unirse al equipo de Cody. ">
+                <!-- Button to trigger the modal -->
+                <button id="modalBtn">Únete A Mi Equipo</button>
+
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    
+                        <div class="join-team-form">
+                            
+                            <form id="join-form" name="join-myteam-form" accept-charset="utf-8" action="https://formspree.io/f/mqkrwdaw" method="post">
+                                <fieldset id="form-inputs">
+                                <label for="client-firstname">Cuál es tu primer nombre?</label>
+                                <input id="input-contact" type="text" name="name" id="first-name" placeholder="primer nombre" required="">
+                                <br>
+                                <label for="client-lastname">Cual es tu apellido?</label>
+                                <input id="input-contact" type="text" name="name" id="Last-name" placeholder="ultimo nombre" required="">
+                                <br>
+                                <label for="email-address">Dirección de correo electrónico:</label>
+                                <input id="input-contact" type="email" name="_replyto" id="email-address" placeholder="email@test.com" required="">
+                                <br>
+                                <label for="telephone">Cuál es tu número de teléfono?</label>
+                                <input id="input-contact" type="telephone" name="telephone" id="telephone" placeholder="(555) 555-5555">
+                                <br>
+                                </fieldset>
+
+                                <div class="submit-form-button"><input id="submit-button"type="submit" value="Ingresar">
+
+                                </div>
+                            </form>     
+                        </div>
+                </div>
+                </div>
+
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById("myModal");
+                    
+                    // Get the button that opens the modal
+                    var btn = document.getElementById("modalBtn");
+                    
+                    // Get the <span> element that closes the modal
+                    var span = document.getElementsByClassName("close")[0];
+                    
+                    // When the user clicks the button, open the modal
+                    btn.onclick = function() {
+                    modal.style.display = "block";
+                    }
+                    
+                    // When the user clicks on <span> (x), close the modal
+                    span.onclick = function() {
+                    modal.style.display = "none";
+                    }
+                    
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                    }
+                    </script>
+            </div>
+    </div>
+
+    <div class="landing-text-box">
+        <div class="hero-text" id="landing-text-1">
+            Bienvenidos. 
+        </div>
+        <div class="hero-text" id="landing-text-2">
+            Prepárese para las incertidumbres de la vida, proteja lo más significativo.
+        </div>
+
+        <div class="hero-button" id="landing-button"> <a href="#contact" style="color:white" alt="Botón rectangular negro mate con fuente blanca. El botón se resalta mediante un borde degradado vertical cuando el cursor se sitúa sobre el botón. Los colores resaltados son rojo, azul y morado."> Hablemos </a></div>
+    </div>
+</div>
+
+
+
+<!--appointment-->
+<div class="schedule" id="schedule">
+    <!-- Calendly inline widget begin -->
+        <div class="calendly-inline-widget" alt="Este es el widget de reserva de Calendly de terceros que permite a los usuarios reservar una cita con Cody". data-url="https://calendly.com/youcanemailcj"></div>
+
+    <!-- Calendly inline widget end -->
+</div>
+
+<!-- contact -->
+<div class="about" id="about">
+
+    <img src="/assets/images/cody-color.webp" alt="Profile picture of Cody wearing a suit and bowtie with the background of the Tucson, Arizona mountains as the background. " id="profile-color">
+
+    <div class="about-me">En mi visión de Primerica y el mundo
+        de seguros de vida, veo una oportunidad no sólo de proteger
+        familias, sino también para inculcar valores de educación financiera y seguridad.
+        Creo en servir a la comunidad de Arizona brindándoles no solo
+        soluciones de seguros sino también siendo un asesor de confianza,
+        guiar a las familias hacia sus metas financieras.
+    </div>
+    
+
+</div>
+
+
+
+<!-- contact -->
+<h1 class="contact-today" style="text-align: center;">Mantengámonos en contacto.</h1>
+
+<div class="contact-section" id="contact">
+    
+
+    <div class="contact-form">
+        
+        <form id="agent-form" name="contact-form" accept-charset="utf-8" action="https://formspree.io/f/xayradnl" method="post">
+            <fieldset id="form-inputs">
+              <label for="client-firstname">Primer nombre:</label>
+              <input id="input-contact" type="text" name="name" id="first-name" placeholder="Primer nombre" required="">
+              <br>
+              <label for="client-lastname">Apellido:</label>
+              <input id="input-contact" type="text" name="name" id="Last-name" placeholder="Apellido" required="">
+              <br>
+              <label for="email-address">Dirección de correo electrónico:</label>
+              <input id="input-contact" type="email" name="_replyto" id="email-address" placeholder="email@test.com" required="">
+              <br>
+              <label for="telephone">Número de teléfono:</label>
+              <input id="input-contact" type="telephone" name="telephone" id="telephone" placeholder="(555) 555-5555">
+              <br>
+            </fieldset>
+
+            <div class="submit-form-button"><input id="submit-button"type="submit" value="Ingresar">
+
+            </div>
+        </form>     
+    </div>
+</div>
+
+<div class="icons">
+    <a href="tel:5208204963"><img src="/assets/images/phone-icon.png" alt="Icono de teléfono que enlaza con el número de teléfono de Cody 5208204963" style="height: 40px; width: 40px;"></a>
+    <a href= "mailto:info@codyoutfleet.com"><img src="/assets/images/email-icon.png" alt="Icono de correo electrónico que enlaza con el correo electrónico de Cody info@codyoutfleet.com"style="height: 40px; width: 40px;"></a>
+    <a href="https://maps.app.goo.gl/byKikKhEs4n2nGYC9"><img src="/assets/images/location-icon.png" alt="Ícono de ubicación que enlaza con Cody's Tucson, Arizona, dirección comercial, 7225 N Oracle Rd, #112, Tucson, AZ 85704" style="height: 40px; width: 40px;"></a>
+</div>
+
+
+<!-- footer -->
+<div class="footer-section" id="footer">
+        
+        <p class="contact-email-phone">
+            <b>Para cualquier pregunta</b> <b style="text-align: center;">Por favor contácteme directamente a la siguiente dirección de correo electrónico</b> <br>
+            <b>info@codyoutfleet.com</p>
+        </p>
+
+
+       
+        <p class="ending" style="text-align: center;">Derechos de autor © 2024 | Reservados todos los derechos</p>
+        
+
+        <div class="privacy-link">
+            <a href="https://www.primerica.com/public/privacy/online_privacy_policy.html" alt="Enlace que le llevará a la Política de Privacidad de Primerica en inglés.">Política De Privacidad </a>
+        </div>
+        
+</div>
+
+</html>
