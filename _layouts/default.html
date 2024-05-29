@@ -1,28 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
-</head>
-<body>
-    <header>
-        <h1>{{ site.title }}</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about/">About</a></li>
-                <!-- Add more navigation links as needed -->
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <article>
-            <h2>{{ page.title }}</h2>
-            {{ content }}
-        </article>
-    </main>
-    <footer>
-        <p>&copy; {{ site.title }} {{ "now" | date: "%Y" }}</p>
-    </footer>
-</body>
+    <b>{{ page.author }}</b>
+  </head>
+  <body>
+    {{ content }}
+  </body>
 </html>
