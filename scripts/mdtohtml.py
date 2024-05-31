@@ -30,8 +30,8 @@ def convert_markdown_to_html(input_dir, output_filepath):
     <title>Combined Blog Posts</title>
     <nav><a href="../index.html" alt="Home Button to main page"><button>Go Back</button></a></nav>
     <style>
-        body { background-color: #0073ff; font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
-        h1 { text-align: center; }
+        body { background-color: #fbfbff; font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
+        h1 { text-align: center; color: #040f16; }
         .post { margin-bottom: 40px; }
     </style>
 </head>
@@ -70,9 +70,9 @@ def convert_markdown_to_html(input_dir, output_filepath):
     <title>Combined Blog Posts</title>
     <nav><a href="../index.html" alt="Home Button to main page"><button>Go Back</button></a></nav>
     <style>
-        body { background-color: #0073ff; font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
-        h1 { text-align: center; }
-        h2 { border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+        body { background-color: #fbfbff; font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
+        h1 { text-align: center; color: #040f16; }
+        h2 { border-bottom: 1px solid #ccc; padding-bottom: 5px; color: #0b4f6c; }
         .thumbnail { width: 100px; height: auto; }
         .post { margin-bottom: 40px; }
     </style>
