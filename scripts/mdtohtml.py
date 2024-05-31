@@ -67,6 +67,7 @@ def convert_markdown_to_html(input_dir, output_filepath):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Combined Blog Posts</title>
+    <nav><a href="../index.html" alt="Home Button to main page" Go Back </a></nav>
     <style>
         body { background-color: #0073ff; font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
         h1 { text-align: center; }
