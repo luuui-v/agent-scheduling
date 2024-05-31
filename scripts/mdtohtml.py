@@ -71,7 +71,7 @@ def convert_markdown_to_html(input_dir, output_filepath):
         body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
         h1 { text-align: center; }
         h2 { border-bottom: 1px solid #ccc; padding-bottom: 5px; }
-        .thumbnail { max-width: 100%; height: auto; }
+        .thumbnail { width: 100px; height: auto; }
         .post { margin-bottom: 40px; }
     </style>
 </head>
