@@ -1,5 +1,21 @@
 import os
 import markdown
+import re
+
+def parse_front_matter(content):
+    """Parse the front matter from a markdown content string."""
+    front_matter = {}
+    if content.startswith('---'):
+        parts = content.split('---', 2)
+        if len(parts) > 2:
+            front_matter_content = parts[1]
+            body_content = parts[2]
+            for line in front_matter_content.splitlines():
+                if ": " in line:
+                    key, value = line.split(": ", 1)
+                    front_matter[key.strip()] = value.strip()
+            return front_matter, body_content
+    return front_matter, content
 
 def convert_markdown_to_html(input_dir, output_filepath):
     if not os.path.exists(input_dir):
@@ -33,8 +49,14 @@ def convert_markdown_to_html(input_dir, output_filepath):
             md_filepath = os.path.join(input_dir, md_filename)
             with open(md_filepath, 'r', encoding='utf-8') as md_file:
                 md_content = md_file.read()
-            html_content = markdown.markdown(md_content)
-            post_header = f'<h2>{md_filename}</h2>'
+
+            front_matter, body_content = parse_front_matter(md_content)
+            html_content = markdown.markdown(body_content)
+
+            post_header = f'<h2>{front_matter.get("title", md_filename)}</h2>'
+            if 'thumbnail' in front_matter:
+                post_header += f'<img class="thumbnail" src="{front_matter["thumbnail"]}" alt="{front_matter.get("title", "thumbnail")}">'
+            
             html_parts.append(post_header)
             html_parts.append(f'<div class="post">{html_content}</div>')
 
@@ -49,6 +71,7 @@ def convert_markdown_to_html(input_dir, output_filepath):
         body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
         h1 { text-align: center; }
         h2 { border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+        .thumbnail { max-width: 100%; height: auto; }
         .post { margin-bottom: 40px; }
     </style>
 </head>
