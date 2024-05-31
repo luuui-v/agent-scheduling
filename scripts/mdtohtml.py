@@ -2,6 +2,31 @@ import os
 import markdown
 
 def convert_markdown_to_html(input_dir, output_filepath):
+    if not os.path.exists(input_dir):
+        print(f"Directory {input_dir} does not exist. Creating an empty HTML file.")
+        with open(output_filepath, 'w', encoding='utf-8') as output_file:
+            output_file.write("""
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Blog Posts</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
+        h1 { text-align: center; }
+        .post { margin-bottom: 40px; }
+    </style>
+</head>
+<body>
+    <h1>All Blog Posts</h1>
+    <p>No posts available.</p>
+</body>
+</html>
+            """)
+        print("Created an empty HTML file.")
+        return
+
     html_parts = []
     for md_filename in os.listdir(input_dir):
         if md_filename.endswith('.md'):
@@ -43,12 +68,9 @@ def convert_markdown_to_html(input_dir, output_filepath):
     print("Markdown files have been converted and combined into a single HTML file successfully!")
 
 if __name__ == "__main__":
-    input_dir = os.path.join(os.path.dirname(__file__), '..', '_posts')
-    output_filepath = os.path.join(os.path.dirname(__file__), '..', 'combined_blog.html')
-
+    input_dir = os.path.join(os.path.dirname(__file__), '../_posts')
+    output_filepath = os.path.join(os.path.dirname(__file__), '../combined_blog.html')
     print(f"Input directory: {input_dir}")
     print(f"Output file: {output_filepath}")
-
     print("Starting conversion process...")
     convert_markdown_to_html(input_dir, output_filepath)
-    print("Conversion process finished.")
