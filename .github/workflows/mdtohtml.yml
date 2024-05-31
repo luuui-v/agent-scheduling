@@ -3,7 +3,7 @@ name: Convert Markdown to HTML
 on:
   push:
     paths:
-      - '../../_posts/**.md'
+      - '_posts/**.md'
 
 jobs:
   build:
@@ -21,15 +21,20 @@ jobs:
     - name: Install dependencies
       run: pip install markdown
 
-    - name: Run conversion script
-      run: python ../../mdtohtml.py
+    - name: Print working directory
+      run: pwd
 
+    - name: List files in repository
+      run: ls -R
+
+    - name: Run conversion script
+      run: python scripts/mdtohtml.py
 
     - name: Commit and push changes
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git add ../../combined_blog.html
+        git add combined_blog.html
         git commit -m "Update combined_blog.html"
         git push
       env:
