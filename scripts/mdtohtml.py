@@ -69,59 +69,68 @@ def convert_markdown_to_html(input_dir, output_filepath):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Combined Blog Posts</title>
     <nav><a href="../index.html" alt="Home Button to main page"><button>Go Back</button></a></nav>
-    <style>
-        body {
-            background-color: #f6f6f6;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 40px;
-            font-size: 36px;
-            text-transform: uppercase;
-        }
-        .container {
-            max-width: 800px;
-            width: 100%;
-        }
-        .post {
-            margin-bottom: 60px;
-        }
-        h2 {
-            color: #007bff;
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-        .thumbnail {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            display: block;
-            margin: 0 auto 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        p {
-            color: #555;
-            font-size: 18px;
-            line-height: 1.8;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        a:hover {
-            color: #0056b3;
-        }
+    
+   <style>
+        body { background-color: #fbfbff; font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
+        h1 { text-align: center; color: #040f16; }
+        h2 { border-bottom: 1px solid #ccc; padding-bottom: 5px; color: #0b4f6c; }
+        .thumbnail { width: 100px; height: auto; }
+        .post { margin-bottom: 40px; }
     </style>
+</head>
+<body>
+    <h1>All Blog Posts</h1>
+    <div class="container">
+        <div class="post-list">
+            <!-- Post list will be dynamically inserted here -->
+        </div>
+        <div class="post-content">
+            <!-- Full post view will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for handling click events on post list items
+        document.addEventListener("DOMContentLoaded", function() {
+            const postList = document.querySelector(".post-list");
+            const postContent = document.querySelector(".post-content");
+
+            // Sample data for demonstration
+            const posts = [
+                { title: "Post 1", content: "Content of post 1" },
+                { title: "Post 2", content: "Content of post 2" },
+                { title: "Post 3", content: "Content of post 3" }
+            ];
+
+            // Function to display full post content when a list item is clicked
+            function showFullPost(post) {
+                postContent.innerHTML = `
+                    <h2>${post.title}</h2>
+                    <p>${post.content}</p>
+                `;
+            }
+
+            // Function to render post list
+            function renderPostList() {
+                postList.innerHTML = "";
+                posts.forEach((post, index) => {
+                    const listItem = document.createElement("div");
+                    listItem.classList.add("post-list-item");
+                    listItem.textContent = post.title;
+                    listItem.addEventListener("click", () => showFullPost(post));
+                    postList.appendChild(listItem);
+                });
+            }
+
+            // Render post list when the page loads
+            renderPostList();
+        });
+    </script>
+
+
+
+
+
 </head>
 <body>
     <h1>All Blog Posts</h1>
