@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: rgb(247, 170, 170);
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.thumbnail {
+    width: 100px;
+    height: auto;
+}
+
+.post {
+    margin-bottom: 40px;
+}

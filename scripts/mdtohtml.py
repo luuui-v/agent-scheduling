@@ -28,11 +28,7 @@ def convert_markdown_to_html(input_dir, output_filepath):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Combined Blog Posts</title>
-    <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
-        h1 { text-align: center; }
-        .post { margin-bottom: 40px; }
-    </style>
+    <link rel="stylesheet" href="../styles/blogstyles.css">
 </head>
 <body>
     <h1>All Blog Posts</h1>
@@ -67,13 +63,7 @@ def convert_markdown_to_html(input_dir, output_filepath):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Combined Blog Posts</title>
-    <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
-        h1 { text-align: center; }
-        h2 { border-bottom: 1px solid #ccc; padding-bottom: 5px; }
-        .thumbnail { width: 100px; height: auto; }
-        .post { margin-bottom: 40px; }
-    </style>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <h1>All Blog Posts</h1>
