@@ -29,7 +29,7 @@ def convert_markdown_to_html(input_dir, output_filepath):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Combined Blog Posts</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
+        body { background-color: b4c5e4; font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
         h1 { text-align: center; }
         .post { margin-bottom: 40px; }
     </style>
