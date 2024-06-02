@@ -2,7 +2,7 @@
 layout: blog
 title: "Understanding Life Insurance: Securing Your Future and Your Loved Ones"
 date: 2024-05-30T19:01:00.000Z
-thumbnail: /images/uploads/62c6bc25eee9410fe137d91f.png
+thumbnail: /images/uploads/micheile-henderson-zvprbbmt8qa-unsplash.jpg
 ---
 Life insurance is a crucial component of a comprehensive financial plan. It provides a safety net for your loved ones in the event of your untimely death, ensuring they are financially protected. This article will explore the basics of life insurance, the different types available, and how to choose the right policy for your needs.
 
