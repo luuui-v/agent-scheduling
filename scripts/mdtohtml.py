@@ -1,7 +1,6 @@
 import os
 import markdown
 import json
-from datetime import datetime
 
 def parse_front_matter(content):
     """Parse the front matter from a markdown content string."""
@@ -22,8 +21,7 @@ def convert_markdown_to_html(input_dir, output_filepath):
     if not os.path.exists(input_dir):
         print(f"Directory {input_dir} does not exist. Creating an empty HTML file.")
         with open(output_filepath, 'w', encoding='utf-8') as output_file:
-            output_file.write("""
-<!DOCTYPE html>
+            output_file.write("""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -40,8 +38,7 @@ def convert_markdown_to_html(input_dir, output_filepath):
     <h1>All Blog Posts</h1>
     <p>No posts available.</p>
 </body>
-</html>
-            """)
+</html>""")
         print("Created an empty HTML file.")
         return
 
@@ -58,15 +55,14 @@ def convert_markdown_to_html(input_dir, output_filepath):
                 'title': front_matter.get("title", md_filename),
                 'thumbnail': front_matter.get("thumbnail"),
                 'content': html_content,
-                'date': md_filename[:10]  # Convert datetime to string
+                'date': md_filename[:10]  # Extract date from filename
             }
             posts.append(post)
 
     # Sort posts by date
     posts.sort(key=lambda x: x['date'], reverse=True)
 
-    html_header = """
-<!DOCTYPE html>
+    html_header = """<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -109,4 +105,106 @@ def convert_markdown_to_html(input_dir, output_filepath):
             transition: background-color 0.3s ease;
             padding: 10px;
             border-radius: 5px;
-   
+        }
+        .post-list-item:hover {
+            background-color: #f0f0f0;
+        }
+        .post-content {
+            flex-basis: 60%;
+            max-width: 800px;
+            padding: 0 20px;
+            border-left: 2px solid #ccc;
+            overflow-y: auto;
+        }
+        .post {
+            margin-bottom: 60px;
+        }
+        h2 {
+            color: #007bff;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .thumbnail {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        p {
+            color: #555;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>All Blog Posts</h1>
+    <div class="container">
+        <div class="post-list">
+"""
+
+    html_footer = """
+        </div>
+        <div class="post-content">
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const posts = """ + json.dumps(posts) + """;
+
+            const postList = document.querySelector(".post-list");
+            const postContent = document.querySelector(".post-content");
+
+            function showFullPost(post) {
+                postContent.innerHTML = `
+                    <h2>${post.title}</h2>
+                    ${post.thumbnail ? `<img class="thumbnail" src="${post.thumbnail}" alt="${post.title}">` : ""}
+                    <div>${post.content}</div>
+                `;
+            }
+
+            function renderPostList() {
+                postList.innerHTML = "";
+                posts.forEach((post) => {
+                    const listItem = document.createElement("div");
+                    listItem.classList.add("post-list-item");
+                    listItem.textContent = post.title;
+                    listItem.addEventListener("click", () => showFullPost(post));
+                    postList.appendChild(listItem);
+                });
+            }
+
+            renderPostList();
+            // Show the latest post by default
+            if (posts.length > 0) {
+                showFullPost(posts[0]);
+            }
+        });
+    </script>
+</body>
+</html>
+"""
+
+    with open(output_filepath, 'w', encoding='utf-8') as output_file:
+        output_file.write(html_header + html_footer)
+
+    print("Markdown files have been converted and combined into a single HTML file successfully!")
+
+if __name__ == "__main__":
+    input_dir = os.path.join(os.path.dirname(__file__), '../_posts')
+    output_filepath = os.path.join(os.path.dirname(__file__), '../combined_blog.html')
+    print(f"Input directory: {input_dir}")
+    print(f"Output file: {output_filepath}")
+    print("Starting conversion process...")
+    convert_markdown_to_html(input_dir, output_filepath)
