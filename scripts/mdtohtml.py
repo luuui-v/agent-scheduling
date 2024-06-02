@@ -134,6 +134,7 @@ def convert_markdown_to_html(input_dir, output_filepath):
 
         .blog-title h1 {
             margin: 0;
+            font-size: 20px;
         }
 
         body {
