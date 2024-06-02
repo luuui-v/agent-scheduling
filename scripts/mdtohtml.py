@@ -74,9 +74,8 @@ def convert_markdown_to_html(input_dir, output_filepath):
         .go-back {
             background-color: #000000;
             color: #FFFFFF;
-            border: none;
-            radius: 10px;
-            font-size: 20px;
+            border-radius: 10px;
+            font-size: 18px;
             padding: 1em;
 
         }
