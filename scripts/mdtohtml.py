@@ -216,7 +216,6 @@ def convert_markdown_to_html(input_dir, output_filepath):
 
 </head>
 <body>
-    <h1>The Blog ...</h1>
     <div class="container">
         <div class="post-list">
 """
