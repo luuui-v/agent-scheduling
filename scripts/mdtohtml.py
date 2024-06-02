@@ -91,6 +91,7 @@ def convert_markdown_to_html(input_dir, output_filepath):
             justify-content: space-between;
             width: 100%;
             max-width: 1200px;
+            height: calc(100vh - 80px);
         }
         .post-list {
             flex-basis: 30%;
@@ -112,6 +113,7 @@ def convert_markdown_to_html(input_dir, output_filepath):
             max-width: 800px;
             padding: 0 20px;
             border-left: 2px solid #ccc;
+            overflow-y: auto;
         }
         .post {
             margin-bottom: 60px;
