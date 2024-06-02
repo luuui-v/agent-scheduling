@@ -26,7 +26,7 @@ def convert_markdown_to_html(input_dir, output_filepath):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Combined Blog Posts</title>
+    <title>Blog Posts</title>
     <nav><a href="../index.html" alt="Home Button to main page"><button>Go Back</button></a></nav>
     <style>
         body { background-color: #fbfbff; font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
@@ -35,7 +35,7 @@ def convert_markdown_to_html(input_dir, output_filepath):
     </style>
 </head>
 <body>
-    <h1>All Blog Posts</h1>
+    <h1>The Blog ...</h1>
     <p>No posts available.</p>
 </body>
 </html>""")
@@ -67,9 +67,16 @@ def convert_markdown_to_html(input_dir, output_filepath):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Combined Blog Posts</title>
-    <nav><a href="../index.html" alt="Home Button to main page"><button>Go Back</button></a></nav>
+    <title>Blog Posts</title>
+    <nav><a href="../index.html" alt="Home Button to main page"><button class="go-back">Go Back</button></a></nav>
     <style>
+
+        .go-back {
+            background-color: #000000;
+            color: #FFFFFF;
+        }
+
+
         body {
             background-color: #f6f6f6;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -149,7 +156,7 @@ def convert_markdown_to_html(input_dir, output_filepath):
     </style>
 </head>
 <body>
-    <h1>All Blog Posts</h1>
+    <h1>The Blog ...</h1>
     <div class="container">
         <div class="post-list">
 """
