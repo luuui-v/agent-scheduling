@@ -269,7 +269,7 @@ def convert_markdown_to_html(input_dir, output_filepath):
 
 if __name__ == "__main__":
     input_dir = os.path.join(os.path.dirname(__file__), '../_posts')
-    output_filepath = os.path.join(os.path.dirname(__file__), '../combined_blog.html')
+    output_filepath = os.path.join(os.path.dirname(__file__), '../blog.html')
     print(f"Input directory: {input_dir}")
     print(f"Output file: {output_filepath}")
     print("Starting conversion process...")
