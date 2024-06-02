@@ -130,7 +130,7 @@ def convert_markdown_to_html(input_dir, output_filepath):
             margin-bottom: 60px;
         }
         h2 {
-            color: #007bff;
+            color: #d00000;
             font-size: 28px;
             margin-bottom: 20px;
         }
