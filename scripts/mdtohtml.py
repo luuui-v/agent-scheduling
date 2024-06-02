@@ -1,6 +1,7 @@
 import os
 import markdown
 import json
+from datetime import datetime
 
 def parse_front_matter(content):
     """Parse the front matter from a markdown content string."""
@@ -56,9 +57,13 @@ def convert_markdown_to_html(input_dir, output_filepath):
             post = {
                 'title': front_matter.get("title", md_filename),
                 'thumbnail': front_matter.get("thumbnail"),
-                'content': html_content
+                'content': html_content,
+                'date': datetime.strptime(md_filename[:10], '%Y-%m-%d')  # Assumes filenames start with YYYY-MM-DD
             }
             posts.append(post)
+
+    # Sort posts by date
+    posts.sort(key=lambda x: x['date'], reverse=True)
 
     html_header = """
 <!DOCTYPE html>
@@ -156,7 +161,6 @@ def convert_markdown_to_html(input_dir, output_filepath):
     html_footer = """
         </div>
         <div class="post-content">
-            <h2>Select a post to view</h2>
         </div>
     </div>
     <script>
@@ -186,6 +190,10 @@ def convert_markdown_to_html(input_dir, output_filepath):
             }
 
             renderPostList();
+            // Show the latest post by default
+            if (posts.length > 0) {
+                showFullPost(posts[0]);
+            }
         });
     </script>
 </body>
