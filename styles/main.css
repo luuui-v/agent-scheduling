@@ -72,7 +72,7 @@ body{
         flex-direction: column;
         margin-top: 3rem;
         align-items: center;
-        
+        padding-top: 48px;
     }
 
     #navbar {
