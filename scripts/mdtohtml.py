@@ -1,5 +1,6 @@
 import os
 import markdown
+import re
 
 def parse_front_matter(content):
     """Parse the front matter from a markdown content string."""
@@ -43,7 +44,7 @@ def convert_markdown_to_html(input_dir, output_filepath):
         print("Created an empty HTML file.")
         return
 
-    posts = []
+    html_parts = []
     for md_filename in os.listdir(input_dir):
         if md_filename.endswith('.md'):
             md_filepath = os.path.join(input_dir, md_filename)
@@ -52,12 +53,13 @@ def convert_markdown_to_html(input_dir, output_filepath):
 
             front_matter, body_content = parse_front_matter(md_content)
             html_content = markdown.markdown(body_content)
-            post = {
-                'title': front_matter.get("title", md_filename),
-                'thumbnail': front_matter.get("thumbnail"),
-                'content': html_content
-            }
-            posts.append(post)
+
+            post_header = f'<h2>{front_matter.get("title", md_filename)}</h2>'
+            if 'thumbnail' in front_matter:
+                post_header += f'<img class="thumbnail" src="{front_matter["thumbnail"]}" alt="{front_matter.get("title", "thumbnail")}">'
+            
+            html_parts.append(post_header)
+            html_parts.append(f'<div class="post">{html_content}</div>')
 
     html_header = """
 <!DOCTYPE html>
@@ -67,110 +69,48 @@ def convert_markdown_to_html(input_dir, output_filepath):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Combined Blog Posts</title>
     <nav><a href="../index.html" alt="Home Button to main page"><button>Go Back</button></a></nav>
-    <style>
-        body {
-            background-color: #f6f6f6;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 40px;
-            font-size: 36px;
-            text-transform: uppercase;
-        }
-        .container {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            max-width: 1200px;
-        }
-        .post-list {
-            flex-basis: 30%;
-            max-width: 300px;
-            overflow-y: auto;
-        }
-        .post-list-item {
-            margin-bottom: 20px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        .post-list-item:hover {
-            background-color: #f0f0f0;
-        }
-        .post-content {
-            flex-basis: 60%;
-            max-width: 800px;
-            padding: 0 20px;
-            border-left: 2px solid #ccc;
-        }
-        .post {
-            margin-bottom: 60px;
-        }
-        h2 {
-            color: #007bff;
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-        .thumbnail {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            display: block;
-            margin: 0 auto 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        p {
-            color: #555;
-            font-size: 18px;
-            line-height: 1.8;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        a:hover {
-            color: #0056b3;
-        }
+    
+   <style>
+        body { background-color: #fbfbff; font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
+        h1 { text-align: center; color: #040f16; }
+        h2 { border-bottom: 1px solid #ccc; padding-bottom: 5px; color: #0b4f6c; }
+        .thumbnail { width: 100px; height: auto; }
+        .post { margin-bottom: 40px; }
     </style>
 </head>
 <body>
     <h1>All Blog Posts</h1>
     <div class="container">
         <div class="post-list">
-"""
-
-    html_footer = """
+            <!-- Post list will be dynamically inserted here -->
         </div>
         <div class="post-content">
-            <h2>Select a post to view</h2>
+            <!-- Full post view will be dynamically inserted here -->
         </div>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const posts = """ + str(posts).replace("'", '"') + """;
 
+    <script>
+        // JavaScript for handling click events on post list items
+        document.addEventListener("DOMContentLoaded", function() {
             const postList = document.querySelector(".post-list");
             const postContent = document.querySelector(".post-content");
 
+            // Sample data for demonstration
+            const posts = [
+                { title: "Post 1", content: "Content of post 1" },
+                { title: "Post 2", content: "Content of post 2" },
+                { title: "Post 3", content: "Content of post 3" }
+            ];
+
+            // Function to display full post content when a list item is clicked
             function showFullPost(post) {
                 postContent.innerHTML = `
                     <h2>${post.title}</h2>
-                    ${post.thumbnail ? `<img class="thumbnail" src="${post.thumbnail}" alt="${post.title}">` : ""}
-                    <div>${post.content}</div>
+                    <p>${post.content}</p>
                 `;
             }
 
+            // Function to render post list
             function renderPostList() {
                 postList.innerHTML = "";
                 posts.forEach((post, index) => {
@@ -182,15 +122,28 @@ def convert_markdown_to_html(input_dir, output_filepath):
                 });
             }
 
+            // Render post list when the page loads
             renderPostList();
         });
     </script>
+
+
+
+
+
+</head>
+<body>
+    <h1>All Blog Posts</h1>
+"""
+    html_footer = """
 </body>
 </html>
 """
 
+    full_html_content = html_header + '\n'.join(html_parts) + html_footer
+
     with open(output_filepath, 'w', encoding='utf-8') as output_file:
-        output_file.write(html_header + html_footer)
+        output_file.write(full_html_content)
 
     print("Markdown files have been converted and combined into a single HTML file successfully!")
 
@@ -201,3 +154,4 @@ if __name__ == "__main__":
     print(f"Output file: {output_filepath}")
     print("Starting conversion process...")
     convert_markdown_to_html(input_dir, output_filepath)
+
