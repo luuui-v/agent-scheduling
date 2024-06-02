@@ -5,14 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Posts</title>
     <nav><a href="../index.html" alt="Home Button to main page"><button class="go-back">Go Back</button></a></nav>
+    
+    <div class="navigation" id="navbar">
+        <nav><a href="../index.html" alt="Home Button to main page">Go Back</a></nav>
+        <h1>The Blog ...</h1>
+    </div>
+        
     <style>
 
-        .go-back {
+        #navbar {
             background-color: #000000;
-            color: #FFFFFF;
-            border-radius: 10px;
-            font-size: 18px;
-            padding: 1em;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #navbar a {
+            text-decoration: none;
+            color: white;
+            padding-left: 10px;
+            padding-right: 10px;
 
         }
 
@@ -24,7 +38,6 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;

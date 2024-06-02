@@ -68,38 +68,84 @@ def convert_markdown_to_html(input_dir, output_filepath):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Posts</title>
-    <nav><a href="../index.html" alt="Home Button to main page"><button class="go-back">Go Back</button></a></nav>
+
+    <div class="navigation" id="navbar">
+        <p class="name" style="font-family: regular-black;">CODY OUTFLEET</p>
+        <nav><a href="../index.html" alt="Home Button to main page" style= "transition: .5s;">GO BACK</a></nav>
+        
+        </div>
+    <div class="blog-title"><h1>The Blog.</h1></div>
+
     <style>
 
-        .go-back {
+        /* First Font Family */
+            @font-face {
+            font-family: bold-black;
+            src: url(./assets/fonts/PlayfairDisplay-Black.ttf);
+            }
+
+        /* third Font Family */
+            @font-face {
+            font-family: regular-black;
+            src: url(./assets/fonts/PlayfairDisplay-Regular.ttf);
+            }
+
+
+        .name {
+            color: #5c5c5c;
+        }
+        #navbar {
             background-color: #000000;
-            color: #FFFFFF;
-            border-radius: 10px;
-            font-size: 18px;
-            padding: 1em;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            height: 3em;
+            gap: 30vw;
+            font-size: 15px;
+        }
+
+        #navbar a {
+            text-decoration: none;
+            color: white;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-family: regular-black;
 
         }
 
+        #navbar a:hover {
+            background-color: #ffffff;
+            color: #000000;
+            border-radius: 4px;
+            padding: 10px;
+        }
 
+        .blog-title {
+            font-family: bold-black;
+            width: 100%;
+            background-color: #2145bb;
+            color: white;
+            text-align: center;
+            margin: 0;
 
+        }
+
+        .blog-title h1 {
+            margin: 0;
+        }
 
         body {
             background-color: #f6f6f6;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 40px;
-            font-size: 36px;
-            text-transform: uppercase;
-        }
+
         .container {
             display: flex;
             justify-content: space-between;
@@ -113,29 +159,33 @@ def convert_markdown_to_html(input_dir, output_filepath):
             overflow-y: auto;
         }
         .post-list-item {
+            margin-top: 20px;
             margin-bottom: 20px;
             cursor: pointer;
             transition: background-color 0.3s ease;
             padding: 10px;
             border-radius: 5px;
+            font-family: regular-black;
         }
+        
         .post-list-item:hover {
-            background-color: #f0f0f0;
+            background-color: #dcdcdc;
         }
         .post-content {
             flex-basis: 60%;
             max-width: 800px;
             padding: 0 20px;
-            border-left: 2px solid #ccc;
+            border-left: 1px solid #ccc;
             overflow-y: auto;
         }
         .post {
             margin-bottom: 60px;
         }
         h2 {
-            color: #d00000;
+            color: rgb(0, 0, 0);
             font-size: 28px;
             margin-bottom: 20px;
+            font-family: regular-black;
         }
         .thumbnail {
             width: 100%;
@@ -146,10 +196,13 @@ def convert_markdown_to_html(input_dir, output_filepath):
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+        
+
         p {
-            color: #555;
+            color: #494949;
             font-size: 18px;
             line-height: 1.8;
+            font-family: regular-black;
         }
         a {
             color: #007bff;
@@ -160,6 +213,7 @@ def convert_markdown_to_html(input_dir, output_filepath):
             color: #0056b3;
         }
     </style>
+
 </head>
 <body>
     <h1>The Blog ...</h1>
