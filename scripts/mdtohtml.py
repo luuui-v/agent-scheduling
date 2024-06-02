@@ -1,5 +1,6 @@
 import os
 import markdown
+import json
 
 def parse_front_matter(content):
     """Parse the front matter from a markdown content string."""
@@ -158,7 +159,7 @@ def convert_markdown_to_html(input_dir, output_filepath):
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const posts = """ + str(posts).replace("'", '"') + """;
+            const posts = """ + json.dumps(posts) + """;
 
             const postList = document.querySelector(".post-list");
             const postContent = document.querySelector(".post-content");
@@ -173,7 +174,7 @@ def convert_markdown_to_html(input_dir, output_filepath):
 
             function renderPostList() {
                 postList.innerHTML = "";
-                posts.forEach((post, index) => {
+                posts.forEach((post) => {
                     const listItem = document.createElement("div");
                     listItem.classList.add("post-list-item");
                     listItem.textContent = post.title;
